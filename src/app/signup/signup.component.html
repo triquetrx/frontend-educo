@@ -1,0 +1,96 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md d-flex justify-content-center mt-3">
+      <img src="../../assets/signup-page.png" alt="" class="img-fluid" />
+    </div>
+    <div class="col-md text-secondary mt-4">
+      <h3 class="mb-3 text-center">Create new account</h3>
+      <form #signupData="ngForm" (submit)="(signupData.value)">
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label>Enter your name</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="Enter your name"
+            ngModel
+            #fullName="ngModel"
+            name="fullName"
+            required
+          />
+        </mat-form-field>
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="outline" style="width: 100%">
+              <mat-label>Enter your Email ID</mat-label>
+              <input
+                type="text"
+                matInput
+                placeholder="Enter your Email ID"
+                ngModel
+                #emailId="ngModel"
+                name="emailId"
+                required
+              />
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="outline" style="width: 100%">
+              <mat-label>Choose your username</mat-label>
+              <input
+                type="text"
+                matInput
+                placeholder="Choose your username"
+                ngModel
+                #username="ngModel"
+                name="username"
+                required
+              />
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="outline" style="width: 100%">
+              <mat-label>Password</mat-label>
+              <input
+                type="text"
+                matInput
+                placeholder="Password"
+                ngModel
+                #password="ngModel"
+                name="password"
+                required
+              />
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="outline" style="width: 100%">
+              <mat-label>Confirm Password</mat-label>
+              <input
+                type="text"
+                matInput
+                placeholder="Choose your username"
+                ngModel
+                #cPassword="ngModel"
+                name="cPassword"
+                required
+              />
+            </mat-form-field>
+          </div>
+        </div>
+        <button mat-raised-button class="w-100" color="primary">
+          Create new account
+        </button>
+      </form>
+      <h5 class="text-center mt-4">OR</h5>
+      <button mat-raised-button class="w-100 m-2">Signup via Google</button>
+      <button
+        mat-raised-button
+        class="w-100 m-2"
+        style="background-color: #4267b2; color: #fff"
+      >
+        Signup via Facebook
+      </button>
+    </div>
+  </div>
+</div>

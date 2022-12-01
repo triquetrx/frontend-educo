@@ -1,0 +1,20 @@
+.quote-icon svg {
+  color: red !important;
+}
+
+.img-container {
+  img {
+    width: 96%;
+    border-radius: 50%;
+    border-color: red;
+    background: #e0e0e0;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  }
+}
+
+.images-around {
+  img {
+    width: 100%;
+    border-radius: 50%;
+  }
+}

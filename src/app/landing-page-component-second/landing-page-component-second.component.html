@@ -1,0 +1,23 @@
+<div class="container my-5">
+  <h2 class="text-center">
+    <strong>Our <span style="color: #d32f2f">Services</span></strong>
+  </h2>
+  <h4 class="text-center">We provide best offer in this Spring 2021</h4>
+  <div class="row pt-2">
+    <div
+      class="col mt-4 d-flex justify-content-center"
+      *ngFor="let service of services"
+    >
+      <div class="card" style="width: 18rem">
+        <div class="card-body text-center h5 text-secondary">
+          <img
+            src="../../assets/{{ service.imgName }}.png"
+            alt=""
+            class="card-img-top p-5"
+          />
+          {{ service.description }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

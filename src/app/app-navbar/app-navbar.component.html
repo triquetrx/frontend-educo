@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-md mx-3 mt-3">
+  <div class="container-fluid">
+    <img src="../../assets/brand-logo.png" alt="brand-logo" height="25" />
+    <button
+      class="navbar-toggler"
+      type="button"
+      (click)="toggleChange()"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <mat-icon *ngIf="!isExpanded" style="transform: scale(1.2)"
+        >menu</mat-icon
+      >
+      <mat-icon *ngIf="isExpanded" style="transform: scale(1.2)"
+        >close</mat-icon
+      >
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/home"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/login"
+            >Login</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/signup"
+            >Sign Up</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/about-us"
+            >About Us</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

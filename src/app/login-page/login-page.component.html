@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md d-flex justify-content-center mt-3">
+      <img src="../../assets/login.png" alt="" class="img-fluid" />
+    </div>
+    <div class="col-md-5 pt-4 mt-md-1">
+      <h4 class="text-secondary mb-4 text-center">Welcome back</h4>
+      <form #loginDetails="ngForm" (submit)="submitLogin(loginDetails.value)">
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label>Username/Email ID</mat-label>
+          <input
+            type="email"
+            matInput
+            placeholder="Username/Email ID"
+            aria-label="Enter your username or email id"
+            name="username"
+            #username="ngModel"
+            ngModel
+            required
+          />
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label>Password</mat-label>
+          <input
+            type="password"
+            matInput
+            placeholder="Password"
+            aria-label="Enter your password"
+            name="password"
+            #password="ngModel"
+            ngModel
+            required
+          />
+        </mat-form-field>
+        <div class="row mb-4">
+          <div class="col"><a href="/signup">Create new account</a></div>
+          <div class="col text-end"><a href="/home">Forgot Password?</a></div>
+        </div>
+        <button mat-raised-button color="primary" class="w-100">Sign in</button>
+      </form>
+      <h5 class="text-center mt-4 text-secondary">OR</h5>
+      <button mat-raised-button class="w-100 m-2">Login via Google</button>
+      <button
+        mat-raised-button
+        class="w-100 m-2"
+        style="background-color: #4267b2; color: #fff"
+      >
+        Login via Facebook
+      </button>
+    </div>
+  </div>
+</div>

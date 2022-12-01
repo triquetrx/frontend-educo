@@ -1,0 +1,103 @@
+<div class="container-fluid" id="component-1">
+  <div class="row">
+    <div class="col-md mt-5 pt-4 d-md-block d-none ms-3">
+      <h2 class="mat-text-accent mt-5 pt-5">
+        Admit your Dream <br />
+        University through Educo
+      </h2>
+      <p class="lead pr-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos nobis
+        sapiente mollitia dicta adipisci alias.
+      </p>
+      <button mat-flat-button color="primary">Our Package</button>
+    </div>
+    <div class="col">
+      <img
+        class="img-fluid"
+        src="../../assets/landing-page.png"
+        alt="Thesis image illustration from storyset by rafiki"
+      />
+    </div>
+    <div class="col-md d-md-none d-block text-center">
+      <h2 class="mat-text-accent">
+        Admit your Dream <br />
+        University through Educo
+      </h2>
+      <p class="lead">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos nobis
+        sapiente mollitia dicta adipisci alias.
+      </p>
+      <button mat-flat-button color="primary">Our Package</button>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center" id="enquiry-form">
+    <mat-card class="mt-md-0 mt-4">
+      <mat-card-content class="container-fluid p-4">
+        <form
+          class="row"
+          #enquiry="ngForm"
+          (submit)="enquiryForm(enquiry.value)"
+        >
+          <div class="col-md">
+            <mat-form-field appearance="outline" style="width: 100%">
+              <mat-label>Select an university</mat-label>
+              <input
+                matInput
+                placeholder="Select an university"
+                aria-label="Select an university"
+                [(ngModel)]="searchUniversity"
+                [matAutocomplete]="universityName"
+                name="searchText"
+                #searchText="ngModel"
+                required
+              />
+              <mat-autocomplete #universityName>
+                <mat-option
+                  *ngFor="
+                    let option of options
+                      | filter: searchUniversity
+                      | slice: 0:4
+                  "
+                  [value]="option"
+                >
+                  {{ option }}
+                </mat-option>
+              </mat-autocomplete>
+              <mat-error *ngIf="searchText.invalid"
+                >Provide a valid input</mat-error
+              >
+            </mat-form-field>
+          </div>
+          <div class="col-md">
+            <mat-form-field appearance="outline" style="width: 100%">
+              <mat-label>Enter your email id</mat-label>
+              <input
+                matInput
+                placeholder="example@abc.com"
+                type="email"
+                aria-label="Enter your email id"
+                name="emailId"
+                ngModel
+                #emailId="ngModel"
+                required
+              />
+              <mat-error *ngIf="emailId.invalid"
+                >Provide a valid email</mat-error
+              >
+            </mat-form-field>
+          </div>
+          <div class="col-md-1 d-md-block d-none">
+            <button mat-fab color="primary" type="submit">
+              <mat-icon>send</mat-icon>
+            </button>
+          </div>
+          <div class="w-100 d-md-none d-block">
+            <button mat-flat-button color="primary" type="submit">
+              Submit
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

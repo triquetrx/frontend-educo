@@ -1,1 +1,68 @@
-/* You can add global styles to this file, and also import other style files */
+@use "sass:map";
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$primary-color: mat.define-palette(mat.$red-palette, 700);
+$accent-color: mat.define-palette(mat.$indigo-palette, 500);
+
+$app-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary-color,
+      accent: $accent-color,
+    ),
+  )
+);
+
+@include mat.all-component-themes($app-theme);
+
+.mat-primary {
+  background-color: mat.get-color-from-palette($primary-color, 700);
+}
+
+.mat-text-primary {
+  color: mat.get-color-from-palette($primary-color, 700);
+}
+
+.mat-accent {
+  background-color: mat.get-color-from-palette($accent-color, 500);
+}
+
+.mat-text-accent {
+  color: mat.get-color-from-palette($accent-color, 500);
+}
+
+nav {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  ul li a {
+    color: mat.get-color-from-palette($accent-color, 500) !important;
+  }
+  ul li .active {
+    color: mat.get-color-from-palette($accent-color, 700) !important;
+  }
+  button {
+    color: mat.get-color-from-palette($accent-color, 700) !important;
+  }
+  button:focus {
+    box-shadow: none !important;
+  }
+}
+
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,69 @@
+<div class="container mt-4">
+  <h2 class="text-center">Testimonial</h2>
+  <div class="row">
+    <div class="col-md-1 d-none d-md-block mt-5">
+      <div
+        class="images-around d-flex justify-content-center m-2"
+        *ngFor="let testimonial of testimonials"
+      >
+        <img
+          *ngIf="!activeProfileimage(testimonial.profilePic)"
+          src="../../assets/{{ testimonial.profilePic }}.jpg"
+          alt=""
+        />
+      </div>
+    </div>
+    <div class="col-md-4 mt-3 mb-md-5">
+      <div class="img-container d-flex justify-content-center">
+        <img
+          src="../../assets/{{ testimonials[index].profilePic }}.jpg"
+          alt=""
+          class="img-fluid p-2"
+        />
+      </div>
+    </div>
+    <div class="col-md mt-md-5 mb-1 mt-2 pt-3">
+      <i
+        class="fa fa-quote-left fa-2x"
+        style="color: #d32f2f"
+        aria-hidden="true"
+      ></i>
+      <br />
+      {{ testimonials[index].testimonal }}
+      <div class="row mt-3">
+        <div class="col-md d-block d-md-none text-end">
+          <h6>
+            <b>{{ testimonials[index].name }}</b>
+          </h6>
+          <p style="margin-top: -0.4rem">
+            Student of {{ testimonials[index].collegeName }}
+          </p>
+        </div>
+        <div class="col-md text-md-start text-end">
+          <button
+            mat-mini-fab
+            class="m-2"
+            style="background-color: #fff; color: #d32f2f"
+            (click)="decrement()"
+          >
+            <mat-icon>navigate_before</mat-icon>
+          </button>
+          <button
+            mat-mini-fab
+            color="primary"
+            (click)="increment()"
+            class="m-2"
+          >
+            <mat-icon>navigate_next</mat-icon>
+          </button>
+        </div>
+        <div class="col-md d-md-block d-none text-end">
+          <h6>{{ testimonials[index].name }}</h6>
+          <p style="margin-top: -0.4rem">
+            Student of {{ testimonials[index].collegeName }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
